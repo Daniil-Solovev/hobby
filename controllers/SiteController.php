@@ -44,6 +44,9 @@ class SiteController
     }
 
 
+    /**
+     * @return bool
+     */
     public function actionLoadArticles()
     {
         if (isAjax()) {
@@ -66,7 +69,7 @@ class SiteController
                 $inner_html         = phpQuery::newDocument($inner_page);
                 $posts['full_text'] = $inner_html->find('.post__wrapper')->html();
 
-                $posts = encodeChars($posts);
+//                $posts = encodeChars($posts);
                 $model = new Habramodel();
 
                 if ($model->findDuplicateArticles($posts['link'])) continue;

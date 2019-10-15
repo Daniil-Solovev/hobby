@@ -16,7 +16,7 @@ class Db
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
 
-        $dsn = "pgsql:host={$params['host']};dbname={$params['dbname']};charset={$params['charset']}";
+        $dsn = "mysql:host={$params['host']};dbname={$params['dbname']};charset={$params['charset']}";
         $db  = new PDO($dsn, $params['user'], $params['password'], $opt);
 
         return $db;

@@ -48,7 +48,7 @@ require_once(ROOT . '/views/layouts/header.php');
         <!-- Пагинация-->
         <nav>
             <ul class="pagination">
-                <?php for ($i = 1; $i < $count_pages; $i++): ?>
+                <?php for ($i = 1; $i <= intval($count_pages); $i++): ?>
                     <li class="page-item">
                         <a class="page-link" data-page="<?= $i ?>" href="/page/<?= $i ?>"><?= $i ?></a>
                     </li>
